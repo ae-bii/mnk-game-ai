@@ -1,11 +1,13 @@
 import math
 import random
 
-
+"""
+AI which does random moves
+"""
 class AIPlayerRandom:
     def __init__(self, symbol):
         self.symbol = symbol
-
+        
     def get_move(self, game):
         m = game.m
         n = game.n
@@ -20,6 +22,9 @@ class AIPlayerRandom:
         return row, col
 
 
+"""
+AI that uses the minimax algorithm with alpha-beta pruning to make the optimal move
+"""
 class AIPlayerOptimal:
     def __init__(self, symbol):
         self.symbol = symbol
