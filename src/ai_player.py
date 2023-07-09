@@ -9,10 +9,15 @@ class AIPlayerRandom:
     def get_move(self, game):
         m = game.m
         n = game.n
-        for row in range(m):
-            for col in range(n):
-                if game.is_valid_move(row, col):
-                    return row, col
+
+        row = random.randrange(m)
+        col = random.randrange(n)
+
+        while not game.is_valid_move(row, col):
+            row = random.randrange(m)
+            col = random.randrange(n)
+
+        return row, col
 
 
 class AIPlayerOptimal:
