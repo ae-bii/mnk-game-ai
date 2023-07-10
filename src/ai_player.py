@@ -7,7 +7,10 @@ AI which does random moves
 class AIPlayerRandom:
     def __init__(self, symbol):
         self.symbol = symbol
-        
+    
+    """
+    Generates a random valid move
+    """
     def get_move(self, game):
         m = game.m
         n = game.n
@@ -29,10 +32,16 @@ class AIPlayerOptimal:
     def __init__(self, symbol):
         self.symbol = symbol
 
+    """
+    Generates the optimal move
+    """
     def get_move(self, game):
         _, move = self.minimax(game, True, -math.inf, math.inf)
         return move
 
+    """
+    Uses the minimax algorithm to calculate the optimal move
+    """
     def minimax(self, game, maximizing_player, alpha, beta):
         if game.is_game_over():
             winner = game.get_winner()
