@@ -1,3 +1,6 @@
+"""
+Brains of the board
+"""             
 class MNKGame:
     def __init__(self, m, n, k, ai_player):
         self.m = m
@@ -8,6 +11,9 @@ class MNKGame:
         self.current_player = 'X'
         self.ai_player = ai_player
 
+    """
+    Main game loop
+    """
     def start(self):
 
         while not self.is_game_over():
@@ -37,15 +43,24 @@ class MNKGame:
         else:
             print('It\'s a draw!')
 
+    """
+    Prints the board to the terminal window
+    """
     def print_board(self):
         print()
         for row in self.board:
             print('|'.join(row))
         print()
 
+    """
+    Checks whether the move is valid
+    """
     def is_valid_move(self, row, col):
         return not (row < 0 or row >= self.m or col < 0 or col >= self.n) and self.valid_moves[row, col]
 
+    """
+    Adds the move to the board
+    """
     def make_move(self, row, col):
         if not self.is_valid_move(row, col):
             return False
@@ -54,15 +69,24 @@ class MNKGame:
         self.current_player = 'O' if self.current_player == 'X' else 'X'
         return True
 
+    """
+    Checks whether if someone has won or the board is full
+    """
     def is_game_over(self):
         return self.get_winner() or self.is_board_full()
 
+    """
+    Checks whether the board is full
+    """
     def is_board_full(self):
         for row in self.board:
             if ' ' in row:
                 return False
         return True
 
+    """
+    Checks whether if there is a winner
+    """
     def get_winner(self):
         for row in range(self.m):
             for col in range(self.n):
