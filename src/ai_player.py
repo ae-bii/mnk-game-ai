@@ -29,7 +29,7 @@ class AIPlayerRandom:
 """
 AI that uses the minimax algorithm with alpha-beta pruning to make the optimal move
 """
-class AIPlayerOptimal:
+class AIPlayerMinimax:
     def __init__(self, symbol):
         self.symbol = symbol
 
