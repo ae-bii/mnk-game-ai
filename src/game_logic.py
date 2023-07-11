@@ -56,7 +56,7 @@ class MNKGame:
     Checks whether the move is valid
     """
     def is_valid_move(self, row, col):
-        return not (row < 0 or row >= self.m or col < 0 or col >= self.n) and self.valid_moves[row, col]
+        return not (row < 0 or row >= self.m or col < 0 or col >= self.n) and self.valid_moves[row][col]
 
     """
     Adds the move to the board
@@ -114,3 +114,16 @@ class MNKGame:
                         return self.board[row][col]
 
         return None
+    
+    """
+    Creates a copy of the current board
+    """
+    def copy(self):
+        # Create a new game with the same parameters
+        new_game = MNKGame(self.m, self.n, self.k, self.ai_player)
+
+        # Copy the board and current player
+        new_game.board = [row.copy() for row in self.board]
+        new_game.current_player = self.current_player
+
+        return new_game
