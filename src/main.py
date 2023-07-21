@@ -14,7 +14,7 @@ choose_ai = """
 """
 
 print(choose_ai)
-ai_index = int(input('Choose an AI opponent (1-3): ')) - 1
+ai_index = int(input('Choose an AI opponent (1-3 or Default = 1): ') or '1') - 1
 
 ai_players = [ap.AIPlayerRandom('O'), ap.AIPlayerMinimax('O'), ap.AIPlayerMCTS('O')]
 
