@@ -1,6 +1,6 @@
 # *m,n,k*-game AI
 
-This project is an implementation of an *m,n,k* game in Python. The game is played on an *m*×*n* board with two players. The players take turns to place their symbol on the board, and the goal is to be the first to get K of their symbols in a row, either horizontally, vertically, or diagonally.
+This project is an implementation of an *m,n,k* game in Python. The game is played on an *m*×*n* board with two players. The players take turns to place their symbol on the board, and the goal is to be the first to get *k* of their symbols in a row, either horizontally, vertically, or diagonally.
 
 ## Features
 
