@@ -6,13 +6,15 @@ import ai_player as ap
 m = int(input('Enter a value for m greater than 0 (Default = 3): ') or '3')
 n = int(input('Enter a value for n greater than 0 (Default = 3): ') or '3')
 k = int(input('Enter a value for k greater than 0 (Default = 3): ') or '3')
+
 choose_ai = """
 1. Random
 2. Minimax with Alpha-Beta Pruning
 3. Monte-Carlo Tree Search
 """
+
 print(choose_ai)
-ai_index = int(input('Choose an AI opponent (1-3): '))
+ai_index = int(input('Choose an AI opponent (1-3): ')) - 1
 
 ai_players = [ap.AIPlayerRandom('O'), ap.AIPlayerMinimax('O'), ap.AIPlayerMCTS('O')]
 

@@ -7,7 +7,6 @@ class MNKGame:
         self.n = n
         self.k = k
         self.board = [[' ' for i in range(n)] for j in range(m)]
-        self.valid_moves = [[1 for i in range(n)] for j in range(m)]
         self.current_player = 'X'
         self.ai_player = ai_player
 
@@ -56,7 +55,11 @@ class MNKGame:
     Checks whether the move is valid
     """
     def is_valid_move(self, row, col):
-        return not (row < 0 or row >= self.m or col < 0 or col >= self.n) and self.valid_moves[row][col]
+        if row < 0 or row >= self.m or col < 0 or col >= self.n:
+            return False
+        if self.board[row][col] != ' ':
+            return False
+        return True
 
     """
     Adds the move to the board
@@ -65,7 +68,6 @@ class MNKGame:
         if not self.is_valid_move(row, col):
             return False
         self.board[row][col] = self.current_player
-        self.valid_moves[row][col] = 0
         self.current_player = 'O' if self.current_player == 'X' else 'X'
         return True
 
