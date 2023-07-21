@@ -26,7 +26,7 @@ The AI uses MCTS to make its move. This algorithm uses probabilistic simulations
 
 ## How to Run the Game
 
-To run the game, execute the main.py script in Python. The game will start, and the user will be prompted to make their move.
+To run the game, execute the `main.py` script in Python. The game will start, and the user will be prompted to choose their settings.
 
 ## Contributions
 
