@@ -8,7 +8,7 @@ This project is an implementation of an *m,n,k* game in Python. The game is play
 - The game includes an AI opponent that uses one of three strategies: random moves, minimax algorithm with alpha-beta pruning, or Monte Carlo Tree Search (MCTS).
 - The AI is designed to be interchangeable, allowing for easy comparison of different strategies.
 - The game implements comprehensive game state evaluations, checking for the validity of moves, the end of the game, and the winning player.
-- The AI fastest player is currently MCTS as it is probibalistic while the slowest is Minimax.
+- The fastest AI player is currently MCTS as it is probibalistic while the slowest is Minimax.
 
 ## AI Strategies
 
